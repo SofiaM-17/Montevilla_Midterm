@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+ 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ 
+ 
+<style>
+
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', sans-serif, ;
+  }
+ 
+  body {
+    line-height: 1.6;
+    background: #F4EBE2;
+    color: #800020;
+    
+  }
+ 
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+  }
+ 
+  .hero-glass {
+    position: relative;
+    height: 80vh;
+    background: url('images/dark.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2rem;
+  }
+ 
+  .glass-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 999px;
+    color: #fff;
+    text-align: left;
+    z-index: 1;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+ 
+  .glass-card h1 {
+    color: #e4e4e4;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+ 
+  .glass-card p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #e4e4e4;
+  }
+ 
+ 
+ 
+ 
+  .about-text {
+    flex: 1;
+    min-width: 300px;
+    color: #800020;
+    text-align: center;
+    padding: 0.5rem;
+  }
+ 
+  .about-image {
+    flex: 1;
+  min-width: 300px;
+  text-align: center;
+  padding: 0.5rem;
+  }
+ 
+  .about-image img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    object-fit: cover;
+  }
+ 
+
+  .about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+ 
+ 
+  .section {
+    padding: 4rem 2rem;
+    color: #800020;
+  }
+ 
+  .section.light {
+    background: #F4EBE2;
+    color: #800020;
+  }
+ 
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+ 
+ 
+  .skills-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+ 
+  .skill-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: #800020;
+    transition: transform 0.3s ease;
+  }
+ 
+  .skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(128, 0, 32, 0.5)
+   
+  }
+ 
+  .skill-item h3 {
+    font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #800020;
+  }
+ 
+  .skill-item p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: #800020;
+  }
+ 
+  .progress-bar {
+    background-color: #800020;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+  }
+ 
+  .progress {
+    height: 100%;
+    background-color: #800020;
+    text-align: right;
+    padding-right: 10px;
+    color: #fff;
+    line-height: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: width 0.6s ease-in-out;
+  }
+ 
+ 
+ 
+ 
+  .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+  }
+ 
+  .card img {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+ 
+  .hobbies-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #800020;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 800px;
+    margin: auto;
+  }
+ 
+  .hobbies-card img {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+ 
+  .hobby-text {
+    color: #fff;
+    max-width: 500px;
+  }
+ 
+  .hobby-text h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+ 
+  .hobby-text p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+ 
+  .hobbies-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(128, 0, 32, 0.5)
+   
+  }
+ 
+ 
+ 
+  .project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+  }
+ 
+ 
+  .flip-card {
+    background-color: transparent;
+    width: 280px;
+    height: 300px;
+    perspective: 1000px;
+  }
+ 
+  .flip-card-front img{
+border-radius: 10px;
+  }
+ 
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+ 
+  .flip-card:hover .flip-card-inner,
+  .flip-card:active .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+ 
+  .project-cards .flip-card-front h3,
+  .project-cards .flip-card-front p {
+    color: #fff;
+  }
+ 
+  .project-cards .flip-card-back h3,
+  .project-cards .flip-card-back p {
+    color: #800020;
+  }
+ 
+ 
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.flip-card-front {
+  background: #800020;
+  color: #fff;
+}
+ 
+.flip-card-back {
+  background: #fff;
+  color: #800020;
+  transform: rotateY(180deg);
+}
+ 
+ 
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: auto;
+  }
+ 
+  input, textarea {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+ 
+  button {
+  padding: 1rem;
+  background: #800020;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  }
+ 
+  button:hover {
+    background: #E0115F;
+    box-shadow: 0 0 12px #800020;
+  }
+ 
+ 
+ 
+  html {
+    scroll-behavior: smooth;
+  }
+ 
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #F4EBE2;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+ 
+ 
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+ 
+  .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #800020;
+  }
+ 
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+ 
+  .nav-links a {
+    text-decoration: none;
+    color: #800020;
+    transition: color 0.3s;
+  }
+ 
+  .nav-links a:hover {
+    color: #E0115F;
+  }
+ 
+ 
+ 
+  .footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+  }
+ 
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+ 
+  .footer-container p {
+    margin: 0;
+    color: #800020;
+    font-size: 0.9rem;
+  }
+ 
+  .social-buttons {
+    display: flex;
+    gap: 15px;
+  }
+ 
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    color: #800020;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+ 
+  .social-btn:hover {
+    transform: translateY(-3px);
+  }
+ 
+  .social-btn.facebook:hover {
+    background: #3b5998;
+    color: #fff;
+  }
+ 
+  .social-btn.instagram:hover {
+    background: #e4405f;
+    color: #fff;
+  }
+ 
+  .social-btn.github:hover {
+    background: #333;
+    color: #fff;
+  }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  @media (max-width: 768px) {
+    .hobbies-card {
+        flex-direction: column;
+        width: 100%;
+    }
+ 
+    .hobbies-card img {
+      width: 100%;
+      max-width: 300px;
+    }
+ 
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+    }
+ 
+    .footer-container p {
+      margin-bottom: 10px;
+    }
+ 
+    .social-buttons {
+      justify-content: center;
+    }
+ 
+    .flip-card {
+        width: 90%;
+        margin-bottom: 2rem;
+      }
+    
+ 
+  }
+ 
+  [data-aos] {
+    pointer-events: auto !important;
+  }
+ 
+ 
+ 
+ 
+  .glow {
+    animation: glow 1.5s ease-in-out infinite alternate;
+    color: #fff;
+  }
+ 
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px #800020, 0 0 10px #800020, 0 0 15px #800020;
+    }
+    to {
+      text-shadow: 0 0 10px #fff, 0 0 20px #800020, 0 0 30px #800020;
+    }
+  }
+ 
+ 
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    animation: typing 2s steps(22) 1s 1 normal both, blink 0.7s step-end infinite;
+    font-family: monospace;
+    font-size: 2.5rem;
+  }
+ 
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 17ch; 
+    }
+  }
+ 
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+ 
+
+
+</style>
+
+
+
+</head>
+ 
+<body>
+ 
+ 
+ 
+ 
+    <nav class="navbar">
+        <div class="nav-container container">
+          <a href="#" class="logo">Sofia Montevilla</a>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+   
+ 
+      <header class="hero-glass">
+        <div class="glass-card">
+          <h1><span class="typewriter">Hello, I am Sofia!! </span></h1>
+          <p>
+            I’m a web developer with a knack for turning ideas into beautiful, functional websites.
+            I specialize in bringing creative concepts to life by blending intuitive design with solid development practices.
+            Whether it’s a sleek, modern layout or a highly interactive feature, I focus on ensuring that each website delivers a seamless user experience.
+          </p>
+        </div>
+      </header>
+     
+      <section id="about" class="section about-section">
+        <div class="container about-container" data-aos="fade-up">
+          <div class="about-text">
+            <h2 class="glow">About Me!</h2>
+            <p>
+              I am a passionate and detail-oriented web developer with a strong commitment to creating visually stunning and highly functional websites.
+              With a keen eye for design, I enjoy blending aesthetics with usability to craft seamless digital experiences that engage users and elevate brand presence.
+              I thrive in environments where both creativity and technical skills are required, constantly pushing myself to stay updated with the latest web technologies and trends.
+            </p>
+          </div>
+          <div class="about-image" data-aos="flip-left">
+            <img src="images/profile.jpg" alt="About me photo">
+         
+          </div>
+        </div>
+      </section>
+ 
+ 
+ 
+ 
+      <section id="skills" class="section light">
+        <div class="container" data-aos="fade-up">
+          <h2 class="glow">Skills</h2>
+          <div class="skills-cards-container">
+           
+            <div class="skill-card" data-aos="zoom-in">
+              <h3>HTML5/CSS</h3>
+              <p>Experienced in building responsive layouts and modern UIs using semantic HTML and advanced CSS.</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 90%;">90%</div>
+              </div>
+            </div>
+     
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+              <h3>JavaScript</h3>
+              <p>Skilled in scripting logic, DOM manipulation, and enhancing interactivity with ES6 features.</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 85%;">85%</div>
+              </div>
+            </div>
+     
+       
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+              <h3>Bootstrap</h3>
+              <p>Efficient in rapidly prototyping responsive layouts using Bootstrap utilities and components.</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%;">80%</div>
+              </div>
+            </div>
+     
+          </div>
+        </div>
+      </section>
+     
+ 
+  <section id="hobbies" class="section">
+    <div class="container">
+      <div data-aos="flip-up">
+      <h2 class="glow">Hobbies</h2>
+    </div>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card hobbies-card">
+              <img src="images/5.png" alt="Hobby 1">
+              <div class="hobby-text">
+                <h3>Photography</h3>
+                <p>I enjoy capturing beautiful moments through my camera lens.</p>
+              </div>
+            </div>
+          </div>          
+          <div class="carousel-item">
+            <div class="card hobbies-card">
+              <img src="images/4.png" alt="Hobby 2">
+              <div class="hobby-text">
+                <h3>Traveling</h3>
+                <p>I love exploring new places and cultures across the world.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card hobbies-card">
+              <img src="images/3.png" alt="Hobby 3">
+              <div class="hobby-text">
+                <h3>Reading</h3>
+                <p>I explore new worlds and ideas through books and written stories.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+ 
+  <section id="projects" class="section light">
+    <div data-aos="flip-up">
+    <div class="container">
+      <h2 class="glow">Projects</h2>
+      <div class="project-cards">
+   
+        <div class="flip-card">
+          <div  class="flip-card-inner">
+            <div class="flip-card-front">
+          <img src="images/bubble (2).png" class="card-img-top" alt="Project 1">
+        </div>
+        <div class="flip-card-back">
+          <h3>Bubble App</h3>
+          <p>Bubble is a user-centric app that enables seamless account creation, user interaction, and profile customization.
+            It features a structured sign-up and login process, avatar selection, a home feed showcasing users, and an intuitive menu for navigation.</p>
+        </div>
+        </div>
+        </div>
+ 
+        <div class="flip-card">
+          <div  class="flip-card-inner">
+            <div class="flip-card-front">
+          <img src="images/Maze (2).png" class="card-img-top" alt="Project 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>Maze</h3>
+          <p>Navigate the maze to reach the exit (X) in 3 minutes, avoiding enemies (@) and losing if health hits zero or time runs out.</p>
+        </div>
+        </div>
+        </div>
+ 
+        <div class="flip-card">
+          <div  class="flip-card-inner">
+            <div class="flip-card-front">
+          <img src="images/ddd.png" class="card-img-top" alt="Project 3">
+        </div>
+        <div class="flip-card-back">
+          <h3>Daily Dose Diary</h3>
+          <p>Daily Dose Diary aims to help people by reminding them to take their medication/pills on time.
+            It will also help them to track their medication by providing a calendar of their scheduled time and date of taking their medication/pills. </p>
+        </div>
+        </div>
+        </div>
+   
+      </div>
+    </div>
+  </div>
+  </section>
+ 
+ 
+ 
+ 
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <p id="formResponse"></p>
+  </div>
+</section>
+ 
+<footer class="footer">
+  <div class="container footer-container">
+    <p>© 2025 Sofia Montevilla. All rights reserved.</p>
+    <div class="social-buttons">
+    <a href="https://facebook.com/sofiamontevilla" class="social-btn facebook" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://instagram.com/zofiamvilla" class="social-btn instagram" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://github.com/SofiaM-17" class="social-btn github" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  </div>
+</footer>
+ 
+<script src="script.js"></script>
+ 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+ 
+
+
+ 
+</body>
+</html>
